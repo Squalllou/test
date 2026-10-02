@@ -1,0 +1,247 @@
+/* Reset rapide */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    font-family: Arial, sans-serif;
+
+    background: #f8f3f5;
+    color: #292329;
+}
+
+
+/* Contenu principal */
+
+main {
+    width: 100%;
+    max-width: 850px;
+
+    padding: 70px 60px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Titre */
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 35px;
+}
+
+
+/* Texte */
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* Boutons */
+
+button {
+    border: none;
+
+    padding: 15px 28px;
+    margin: 8px;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: #292329;
+    color: white;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Téléphone */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    main {
+        padding: 45px 25px;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
+/* =========================
+   PAGE QUIZ
+   ========================= */
+
+#quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+/* Chaque question devient visuellement un bloc */
+
+#quiz h2 {
+    margin-top: 25px;
+    margin-bottom: -15px;
+
+    font-size: 1.4rem;
+    color: #292329;
+}
+
+
+/* Texte de la question */
+
+#quiz h2 + p {
+    margin-bottom: -10px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+/* Réponses */
+
+#quiz label {
+    display: block;
+
+    padding: 14px 18px;
+
+    background: #f8f3f5;
+
+    border: 1px solid #eee4e8;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: transform 0.15s, background 0.15s;
+}
+
+
+#quiz label:hover {
+    background: #f1e6ea;
+    transform: translateX(4px);
+}
+
+
+/* Radio + checkbox */
+
+#quiz input[type="radio"],
+#quiz input[type="checkbox"] {
+    margin-right: 10px;
+
+    transform: scale(1.2);
+
+    cursor: pointer;
+}
+
+
+/* Question bonus */
+
+#quiz input[type="text"] {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 2px solid #eee4e8;
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 1.1rem;
+
+    outline: none;
+}
+
+
+#quiz input[type="text"]:focus {
+    border-color: #292329;
+}
+
+
+/* Bouton final */
+
+#quiz button[type="submit"] {
+    align-self: center;
+
+    margin-top: 30px;
+
+    padding: 18px 40px;
+
+    font-size: 1.1rem;
+}
+
+
+/* Le main du quiz doit être plus long que l'accueil */
+
+body:has(#quiz) {
+    align-items: flex-start;
+}
+
+body:has(#quiz) main {
+    margin: 50px 0;
+}
+
+
+/* Téléphone */
+
+@media (max-width: 600px) {
+
+    body:has(#quiz) main {
+        margin: 15px 0;
+    }
+
+    #quiz {
+        gap: 20px;
+    }
+
+    #quiz label {
+        padding: 12px;
+    }
+}
